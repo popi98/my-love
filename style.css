@@ -1,0 +1,905 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --bg: #050507;
+    --card: rgba(255,255,255,0.06);
+    --white: #ffffff;
+    --soft: #d8d8e8;
+    --purple: #b84dff;
+    --pink: #ff4fd8;
+}
+
+
+body {
+
+    background:
+    radial-gradient(circle at top, #21102f 0%, transparent 40%),
+    var(--bg);
+
+    color: var(--white);
+
+    font-family: 'Inter', sans-serif;
+
+    overflow-x: hidden;
+
+}
+
+
+/* Звёздный фон */
+
+.stars {
+
+    position: fixed;
+
+    inset: 0;
+
+    background-image:
+    radial-gradient(#ffffff 1px, transparent 1px);
+
+    background-size: 50px 50px;
+
+    opacity: .15;
+
+    animation: starsMove 20s linear infinite;
+
+    z-index: -1;
+
+}
+
+
+@keyframes starsMove {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-200px);
+    }
+
+}
+
+
+
+/* Загрузка */
+
+.loader {
+
+    position: fixed;
+
+    inset:0;
+
+    background:#050507;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    z-index:9999;
+
+    animation: hideLoader 2.5s forwards;
+
+}
+
+
+.loader-heart {
+
+    font-size:50px;
+
+    animation:pulse 1.5s infinite;
+
+}
+
+
+.loader p {
+
+    margin-top:20px;
+
+    font-size:18px;
+
+    letter-spacing:2px;
+
+}
+
+
+
+@keyframes hideLoader {
+
+    0%,80% {
+        opacity:1;
+    }
+
+    100% {
+        opacity:0;
+        visibility:hidden;
+    }
+
+}
+
+
+@keyframes pulse {
+
+    50% {
+        transform:scale(1.2);
+    }
+
+}
+
+
+
+/* Музыка */
+
+.music-btn {
+
+    position:fixed;
+
+    top:20px;
+
+    right:20px;
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    backdrop-filter:blur(20px);
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    z-index:10;
+
+}
+
+
+
+/* Главный экран */
+
+
+.hero {
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:20px;
+
+}
+
+
+.hero-content {
+
+    max-width:700px;
+
+}
+
+
+
+.small-text {
+
+    color:#aaa;
+
+    letter-spacing:5px;
+
+    font-size:14px;
+
+}
+
+
+
+h1 {
+
+    font-family:'Cormorant Garamond', serif;
+
+    font-size:80px;
+
+    line-height: .9;
+
+    margin:30px 0;
+
+}
+
+
+h1 span {
+
+    background:linear-gradient(
+    90deg,
+    #fff,
+    #c45cff,
+    #ff5ce1
+    );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+}
+
+
+
+.intro {
+
+    color:var(--soft);
+
+    font-size:20px;
+
+    line-height:1.7;
+
+}
+
+
+
+.start-btn {
+
+    margin-top:40px;
+
+    padding:18px 40px;
+
+    border-radius:50px;
+
+    border:none;
+
+    background:linear-gradient(
+    90deg,
+    #8e2de2,
+    #ff4fd8
+    );
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 0 30px rgba(200,70,255,.5);
+
+}/* День рождения блок */
+
+.birthday {
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px 20px;
+
+}
+
+
+.glass-card {
+
+    max-width:900px;
+
+    width:100%;
+
+    padding:35px;
+
+    border-radius:30px;
+
+    background:var(--card);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    box-shadow:
+    0 0 50px rgba(170,60,255,.15);
+
+}
+
+
+
+.photo-wrapper {
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+}
+
+
+.photo-wrapper img {
+
+    width:100%;
+
+    display:block;
+
+    border-radius:25px;
+
+    transition:.8s;
+
+}
+
+
+.photo-wrapper:hover img {
+
+    transform:scale(1.05);
+
+}
+
+
+
+.glow {
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,80,220,.3),
+    transparent
+    );
+
+}
+
+
+
+.birthday-text {
+
+    text-align:center;
+
+    margin-top:40px;
+
+}
+
+
+.label {
+
+    color:#c77dff;
+
+    letter-spacing:4px;
+
+}
+
+
+h2 {
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:50px;
+
+    margin:20px 0;
+
+}
+
+
+
+.birthday-text p {
+
+    color:#ddd;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+
+
+/* Заголовки разделов */
+
+
+.section-title {
+
+    text-align:center;
+
+    margin-bottom:50px;
+
+}
+
+
+.section-title span {
+
+    color:#b84dff;
+
+    font-size:14px;
+
+    letter-spacing:5px;
+
+}
+
+
+
+.section-title h2 {
+
+    margin-top:10px;
+
+}
+
+
+
+
+/* Письмо */
+
+
+.letter,
+.love-letter,
+.memories {
+
+    min-height:100vh;
+
+    padding:100px 20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+
+
+.letter-card {
+
+    max-width:750px;
+
+    margin:auto;
+
+    padding:40px;
+
+    border-radius:30px;
+
+    background:
+    rgba(255,255,255,.05);
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+}
+
+
+
+.letter-card p {
+
+    font-size:19px;
+
+    line-height:1.9;
+
+    color:#e5e5e5;
+
+    margin-bottom:25px;
+
+}
+
+
+
+/* Фотографии */
+
+
+.photo-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+    max-width:1000px;
+
+    margin:auto;
+
+}
+
+
+.memory-card {
+
+    background:rgba(255,255,255,.05);
+
+    border-radius:25px;
+
+    padding:15px;
+
+    backdrop-filter:blur(15px);
+
+}
+
+
+
+.memory-card img {
+
+    width:100%;
+
+    height:350px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+}
+
+
+
+.memory-card p {
+
+    padding:15px;
+
+    color:#ddd;
+
+    line-height:1.5;
+
+}
+
+
+
+/* Финальный экран */
+
+
+.final {
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+    text-align:center;
+
+}
+
+
+
+.final-content {
+
+    max-width:700px;
+
+}
+
+
+
+.heart {
+
+    font-size:70px;
+
+    animation:pulse 2s infinite;
+
+}
+
+
+
+.final h2 {
+
+    font-size:55px;
+
+}
+
+
+
+.final p {
+
+    font-size:21px;
+
+    line-height:2;
+
+    color:#ddd;
+
+}
+
+
+
+.final h1 {
+
+    margin-top:50px;
+
+    font-size:40px;
+
+}
+
+
+
+.date {
+
+    margin-top:30px;
+
+    color:#aaa;
+
+    letter-spacing:5px;
+
+}/* Плавная прокрутка */
+
+html {
+    scroll-behavior:smooth;
+}
+
+
+
+/* Анимация появления */
+
+.reveal {
+
+    opacity:0;
+
+    transform:
+    translateY(50px);
+
+    transition:
+    1s ease;
+
+}
+
+
+.reveal.active {
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+
+}
+
+
+
+/* Скролл вниз */
+
+.scroll {
+
+    position:absolute;
+
+    bottom:40px;
+
+    color:#aaa;
+
+    font-size:14px;
+
+    letter-spacing:3px;
+
+    animation:
+    float 2s infinite;
+
+}
+
+
+.scroll span {
+
+    display:block;
+
+    font-size:25px;
+
+    margin-top:10px;
+
+}
+
+
+
+@keyframes float {
+
+    50% {
+
+        transform:
+        translateY(15px);
+
+    }
+
+}
+
+
+
+/* Летающие сердца */
+
+.heart-particle {
+
+    position:fixed;
+
+    bottom:-50px;
+
+    font-size:20px;
+
+    pointer-events:none;
+
+    animation:
+    fly 6s linear forwards;
+
+    z-index:20;
+
+}
+
+
+
+@keyframes fly {
+
+
+    0% {
+
+        transform:
+        translateY(0)
+        scale(1);
+
+        opacity:1;
+
+    }
+
+
+    100% {
+
+        transform:
+        translateY(-110vh)
+        scale(1.8);
+
+        opacity:0;
+
+    }
+
+
+}
+
+
+
+/* Красивый свет вокруг блоков */
+
+
+.glass-card,
+.letter-card,
+.memory-card {
+
+    transition:.5s;
+
+}
+
+
+.glass-card:hover,
+.letter-card:hover,
+.memory-card:hover {
+
+    box-shadow:
+    0 0 40px rgba(190,80,255,.25);
+
+}
+
+
+
+/* Мобильная версия */
+
+
+@media(max-width:700px){
+
+
+h1 {
+
+    font-size:55px;
+
+}
+
+
+h2 {
+
+    font-size:38px;
+
+}
+
+
+.intro {
+
+    font-size:17px;
+
+}
+
+
+
+.glass-card {
+
+    padding:20px;
+
+}
+
+
+
+.letter-card {
+
+    padding:25px;
+
+}
+
+
+
+.letter-card p {
+
+    font-size:16px;
+
+}
+
+
+
+.photo-grid {
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.memory-card img {
+
+    height:420px;
+
+}
+
+
+
+.final h2 {
+
+    font-size:40px;
+
+}
+
+
+
+.final p {
+
+    font-size:18px;
+
+}
+
+
+
+.final h1 {
+
+    font-size:30px;
+
+}
+
+
+
+}
+
+
+
+/* Неоновый эффект */
+
+h1,
+h2 {
+
+text-shadow:
+0 0 20px rgba(190,80,255,.25);
+
+}
+
+
+
+/* Выделение текста */
+
+::selection {
+
+background:#b84dff;
+
+color:white;
+
+}
